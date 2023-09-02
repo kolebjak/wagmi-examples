@@ -1,11 +1,21 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./src/**/*.{ts,tsx}'],
+module.exports = {
+  darkMode: ['class'],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+  ],
   theme: {
-    fontFamily: {
-      sans: ['"Exo 2"', 'sans-serif'],
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 };
