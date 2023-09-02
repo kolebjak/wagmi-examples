@@ -34,17 +34,17 @@ export const Account = () => {
   return (
     <>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogTrigger asChild={true}>
-          {account.isConnected ? (
+        {account.isConnected ? (
+          <DialogTrigger asChild={true}>
             <Button size="sm" variant="outline" onClick={() => setIsOpen(true)}>
               {displayAddress(account.address)}
             </Button>
-          ) : (
-            <Button size="sm" onClick={handleConnect}>
-              connect wallet
-            </Button>
-          )}
-        </DialogTrigger>
+          </DialogTrigger>
+        ) : (
+          <Button size="sm" onClick={handleConnect}>
+            connect wallet
+          </Button>
+        )}
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle className="whitespace-nowrap">
